@@ -1,0 +1,35 @@
+{
+    "name": "JARVIS Android Development",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "17",
+            "installGradle": true,
+            "gradleVersion": "8.7"
+        },
+        "ghcr.io/devcontainers/features/android-sdk:1": {
+            "platforms": "android-34",
+            "buildToolsVersion": "34.0.0",
+            "cmakeVersion": "3.22.1",
+            "ndkVersion": "26.1.10909125"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "fwcd.kotlin",
+                "mathiasfrohlich.Kotlin",
+                "esbena.codebuff"
+            ],
+            "settings": {
+                "java.configuration.updateBuildConfiguration": "automatic",
+                "java.compile.nullAnalysis.mode": "disabled",
+                "kotlin.languageServer.enabled": true
+            }
+        }
+    },
+    "postCreateCommand": "chmod +x gradlew && echo 'JARVIS dev environment ready!'",
+    "forwardPorts": [],
+    "remoteUser": "vscode"
+}

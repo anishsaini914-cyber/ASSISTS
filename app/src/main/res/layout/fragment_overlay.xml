@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Minimized Bubble -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bubbleContainer"
+        android:layout_width="@dimen/bubble_size"
+        android:layout_height="@dimen/bubble_size"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/jarvis_primary"
+        app:cardCornerRadius="@dimen/bubble_size_half"
+        app:cardElevation="8dp"
+        app:strokeColor="@color/jarvis_accent"
+        app:strokeWidth="2dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/cd_jarvis_bubble"
+            android:src="@drawable/ic_jarvis_bubble" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Expanded Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/expandedContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/overlay_bg"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        app:strokeColor="@color/jarvis_accent"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <!-- Header -->
+            <ImageView
+                android:id="@+id/ivOverlayAvatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/cd_jarvis_logo"
+                android:src="@drawable/ic_jarvis_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/app_name"
+                android:textColor="@color/jarvis_text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ivOverlayAvatar"
+                app:layout_constraintEnd_toStartOf="@id/btnCloseOverlay"
+                app:layout_constraintStart_toEndOf="@id/ivOverlayAvatar"
+                app:layout_constraintTop_toTopOf="@id/ivOverlayAvatar" />
+
+            <ImageView
+                android:id="@+id/btnCloseOverlay"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_close"
+                android:padding="4dp"
+                android:src="@drawable/ic_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/jarvis_text_secondary" />
+
+            <!-- Conversation Area -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOverlayChat"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:padding="4dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@id/inputContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivOverlayAvatar" />
+
+            <!-- Input Area -->
+            <LinearLayout
+                android:id="@+id/inputContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilOverlayInput"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:boxStrokeColor="@color/jarvis_accent"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etOverlayInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/hint_type_message"
+                        android:imeOptions="actionSend"
+                        android:inputType="text"
+                        android:maxLines="3"
+                        android:textColor="@color/jarvis_text_primary"
+                        android:textColorHint="@color/jarvis_text_tertiary" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/btnVoiceInput"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/cd_voice_input"
+                    android:src="@drawable/ic_mic"
+                    app:tint="@color/jarvis_accent" />
+
+                <ImageButton
+                    android:id="@+id/btnSendOverlay"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/cd_send"
+                    android:src="@drawable/ic_send"
+                    app:tint="@color/jarvis_accent" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

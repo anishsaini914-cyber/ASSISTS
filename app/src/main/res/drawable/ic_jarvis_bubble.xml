@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="60dp"
+    android:height="60dp"
+    android:viewportWidth="60"
+    android:viewportHeight="60">
+    <!-- Bubble circle background -->
+    <path
+        android:fillColor="#12121A"
+        android:pathData="M30,30m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0" />
+    <!-- Neon ring -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeWidth="2"
+        android:strokeColor="#1DE9FF"
+        android:pathData="M30,30m-22,0a22,22 0,1 1,44 0a22,22 0,1 1,-44 0" />
+    <!-- J letter -->
+    <path
+        android:fillColor="#1DE9FF"
+        android:pathData="M24,22h14v3h-11v8h10v10h-3v-7h-10z" />
+</vector>

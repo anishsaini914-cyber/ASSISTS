@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="nav_item_selected">#1DE9FF</color>
+    <color name="nav_item_default">#8A8AA0</color>
+</resources>

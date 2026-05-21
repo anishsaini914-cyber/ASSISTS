@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary palette -->
+    <color name="neon_blue">#1DE9FF</color>
+    <color name="neon_blue_alt">#00B4FF</color>
+    <color name="neon_green">#00FF88</color>
+    <color name="neon_purple">#BB86FC</color>
+
+    <!-- Backgrounds -->
+    <color name="background_dark">#0A0A0F</color>
+    <color name="surface_dark">#12121A</color>
+    <color name="card_dark">#1A1A24</color>
+    <color name="surface_light">#F5F5F5</color>
+    <color name="card_light">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_primary_dark">#1A1A1A</color>
+    <color name="text_secondary">#8A8AA0</color>
+    <color name="text_secondary_dark">#666666</color>
+    <color name="text_hint">#555566</color>
+
+    <!-- States -->
+    <color name="error_red">#FF4444</color>
+    <color name="success_green">#00FF88</color>
+    <color name="warning_yellow">#FFD700</color>
+    <color name="info_blue">#448AFF</color>
+
+    <!-- Transparent overlays -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#40FFFFFF</color>
+
+    <!-- Button colors -->
+    <color name="button_primary">#1DE9FF</color>
+    <color name="button_primary_dark">#0097A7</color>
+    <color name="button_disabled">#555566</color>
+
+    <!-- Chip colors -->
+    <color name="chip_background">#1A1A24</color>
+    <color name="chip_selected">#1DE9FF</color>
+    <color name="chip_text">#FFFFFF</color>
+
+    <!-- Gradient endpoints -->
+    <color name="gradient_start">#1DE9FF</color>
+    <color name="gradient_end">#00B4FF</color>
+
+    <!-- Material overrides -->
+    <color name="m3_primary">#1DE9FF</color>
+    <color name="m3_on_primary">#0A0A0F</color>
+    <color name="m3_primary_container">#004A66</color>
+    <color name="m3_on_primary_container">#1DE9FF</color>
+    <color name="m3_secondary">#00FF88</color>
+    <color name="m3_on_secondary">#0A0A0F</color>
+    <color name="m3_background">#0A0A0F</color>
+    <color name="m3_surface">#12121A</color>
+    <color name="m3_on_surface">#FFFFFF</color>
+    <color name="m3_error">#FF4444</color>
+    <color name="m3_on_error">#FFFFFF</color>
+</resources>
