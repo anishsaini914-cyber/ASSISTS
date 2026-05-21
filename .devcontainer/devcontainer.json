@@ -10,8 +10,10 @@
         "ghcr.io/devcontainers/features/android-sdk:1": {
             "platforms": "android-34",
             "buildToolsVersion": "34.0.0",
-            "cmakeVersion": "3.22.1",
             "ndkVersion": "26.1.10909125"
+        },
+        "ghcr.io/devcontainers/features/cmake:1": {
+            "version": "3.22.1"
         }
     },
     "customizations": {
@@ -19,17 +21,21 @@
             "extensions": [
                 "vscjava.vscode-java-pack",
                 "fwcd.kotlin",
-                "mathiasfrohlich.Kotlin",
-                "esbena.codebuff"
+                "mathiasfrohlich.Kotlin"
             ],
             "settings": {
                 "java.configuration.updateBuildConfiguration": "automatic",
                 "java.compile.nullAnalysis.mode": "disabled",
-                "kotlin.languageServer.enabled": true
+                "kotlin.languageServer.enabled": true,
+                "gradle.jvmargs": "-Xmx2048m"
             }
         }
     },
-    "postCreateCommand": "chmod +x gradlew && echo 'JARVIS dev environment ready!'",
+    "postCreateCommand": "sudo chmod +x gradlew && gradle wrapper --gradle-version 8.7 && echo 'JARVIS dev environment ready!'",
     "forwardPorts": [],
-    "remoteUser": "vscode"
+    "remoteUser": "vscode",
+    "containerEnv": {
+        "ANDROID_HOME": "/usr/local/android-sdk",
+        "ANDROID_SDK_ROOT": "/usr/local/android-sdk"
+    }
 }
